@@ -49,16 +49,36 @@
                      <div class="works-content-item">
                         <h3 class="title wow fadeInLeft" data-wow-delay=".3s">Education</h3>
                         <div class="works-inner wow fadeInUp" data-wow-delay=".4s">
+                           {% for education in education %}
                            <div class="works-item">
                               <div class="works-icon">
                                  <i class="flaticon-graduation-cap"></i>
                               </div>
                               <div class="works-content">
-                                 <span class="number">2023 - 2024</span>
-                                 <h5 class="title">Programming course</h5>
-                                 <span class="sub-title">Harverd University</span>
+                                 <span class="number">
+                                    {{education.joining_date | date:"M,Y"}} - 
+                                    {% if education.end_year %}
+                                       {{education.end_year | date:"M,Y"}}
+                                    {% else %}
+                                    Present
+                                    {% endif %}
+                                 </span>
+                                 <h5 class="title">{{education.title}}</h5>
+                                 <span class="sub-title">{{education.organization}}</span>
                               </div>
                            </div>
+                           {% endfor %}
+                           {% comment %} <div class="works-item">
+                              <div class="works-icon">
+                                 <i class="flaticon-graduation-cap"></i>
+                              </div>
+                              <div class="works-content">
+                                 <span class="number">2023 - 2024</span>
+                                 <h5 class="title">Graphics Design Course</h5>
+                                 <span class="sub-title">Harverd University</span>
+                              </div>
+                           </div> {% endcomment %}
+                            {% comment %}
                            <div class="works-item">
                               <div class="works-icon">
                                  <i class="flaticon-graduation-cap"></i>
@@ -78,29 +98,40 @@
                                  <h5 class="title">Graphics Design Course</h5>
                                  <span class="sub-title">Harverd University</span>
                               </div>
-                           </div>
-                           <div class="works-item">
-                              <div class="works-icon">
-                                 <i class="flaticon-graduation-cap"></i>
-                              </div>
-                              <div class="works-content">
-                                 <span class="number">2023 - 2024</span>
-                                 <h5 class="title">Graphics Design Course</h5>
-                                 <span class="sub-title">Harverd University</span>
-                              </div>
-                           </div>
+                           </div> {% endcomment %}
                         </div>
                      </div>
                      <div class="works-content-item">
                         <h3 class="title wow fadeInRight" data-wow-delay=".3s">Work Experience</h3>
                         <div class="works-inner wow fadeInUp" data-wow-delay=".4s">
+                           {% for work in work %}
                            <div class="works-item">
+                              <div class="works-icon">
+                                 <i class="flaticon-graduation-cap"></i>
+                              </div>
+                              <div class="works-content">
+                                 <span class="number">
+                                    {{work.joining_date | date:"M,Y"}} - 
+                                    {% if work.end_year %}
+                                    {{work.end_year | date:"M,Y"}}
+                                    {% else %}
+                                    Present
+                                    {% endif %}
+                                 </span>
+                                 <h5 class="title">{{work.title}}</h5>
+                                 <span class="sub-title">{{work.organization}}</span>
+                              </div>
+                           </div>
+                           {% endfor %}
+                  
+                          
+                           {% comment %} <div class="works-item">
                               <div class="works-icon">
                                  <i class="flaticon-suitcase"></i>
                               </div>
                               <div class="works-content">
                                  <span class="number">2023 - 2024</span>
-                                 <h5 class="title">Programming course</h5>
+                                 <h5 class="title">Graphics Design Course</h5>
                                  <span class="sub-title">Harverd University</span>
                               </div>
                            </div>
@@ -123,17 +154,7 @@
                                  <h5 class="title">Graphics Design Course</h5>
                                  <span class="sub-title">Harverd University</span>
                               </div>
-                           </div>
-                           <div class="works-item">
-                              <div class="works-icon">
-                                 <i class="flaticon-suitcase"></i>
-                              </div>
-                              <div class="works-content">
-                                 <span class="number">2023 - 2024</span>
-                                 <h5 class="title">Graphics Design Course</h5>
-                                 <span class="sub-title">Harverd University</span>
-                              </div>
-                           </div>
+                           </div> {% endcomment %}
                         </div>
                      </div>
                   </div>

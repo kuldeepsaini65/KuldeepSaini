@@ -448,38 +448,40 @@ Description: Gerold - Personal Portfolio HTML5 Template
 		}
 		splitTextToSpans(target);
 
-		// Contact Form Js
-		if ($("#contact-form").length > 0) {
-			$("#contact-form").validate({
-				rules: {
-					conName: "required",
-					conEmail: {
-						required: true,
-						email: true,
-					},
-				},
-				messages: {
-					conName: "Enter your name.",
-					conEmail: "Enter a valid email.",
-				},
-				submitHandler: function (form) {
-					// start ajax request
-					$.ajax({
-						type: "POST",
-						url: "assets/mail/contact-form.php",
-						data: $("#contact-form").serialize(),
-						cache: false,
-						success: function (data) {
-							if (data == "Y") {
-								$("#message_sent").modal("show");
-								$("#contact-form").trigger("reset");
-							} else {
-								$("#message_fail").modal("show");
-							}
-						},
-					});
-				},
-			});
-		}
+		// // Contact Form Js
+		// if ($("#contact-form").length > 0) {
+		// 	$("#contact-form").validate({
+		// 		rules: {
+		// 			conName: "required",
+		// 			conEmail: {
+		// 				required: true,
+		// 				email: true,
+		// 			},
+		// 		},
+		// 		messages: {
+		// 			conName: "Enter your name.",
+		// 			conEmail: "Enter a valid email.",
+		// 		},
+		// 		submitHandler: function (form) {
+		// 			// start ajax request
+		// 			$.ajax({
+		// 				type: "POST",
+		// 				url: "assets/mail/contact-form.php",
+		// 				data: $("#contact-form").serialize(),
+		// 				cache: false,
+		// 				success: function (data) {
+		// 					if (data == "Y") {
+		// 						$("#message_sent").modal("show");
+		// 						$("#contact-form").trigger("reset");
+		// 					} else {
+		// 						$("#message_fail").modal("show");
+		// 					}
+		// 				},
+		// 			});
+		// 		},
+		// 	});
+		// }
+
+		
 	});
 })(jQuery);

@@ -36,7 +36,8 @@
                         <p>I design and code beautifully simple things and i love what i do. Just simple like that!</p>
                      </div>
                      <div class="tj-contact-form">
-                        <form id="contact-form">
+                        <form  method="post">
+                           {% csrf_token %}
                            <div class="row gx-3">
                               <div class="col-sm-6">
                                  <div class="form_group">
