@@ -4,3 +4,4 @@ media/
 rought/
 staticfiles/
 .env    
+db.sqlite3
