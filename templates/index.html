@@ -558,8 +558,8 @@
                   </div>
 
                   <div class="resume-widget">
+                     {% for education in educationexp %}
                      <div class="resume-item wow fadeInRight" data-wow-delay=".5s">
-                        {% for education in educationexp %}
                         <div class="time">
                            {{education.joining_date | date:"M,Y"}} - 
                            {% if education.end_year %}
@@ -571,8 +571,8 @@
                         </div>
                         <h3 class="resume-title">{{education.title}}</h3>
                         <div class="institute">{{education.organization}}</div>
-                        {% endfor %}
                      </div>
+                     {% endfor %}
                      {% comment %} <div class="resume-item wow fadeInRight" data-wow-delay=".6s">
                         <div class="time">2016 - 2020</div>
                         <h3 class="resume-title">Graphic design course</h3>
