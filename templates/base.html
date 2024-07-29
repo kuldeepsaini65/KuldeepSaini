@@ -7,10 +7,12 @@
    <meta charset="utf-8" />
    <meta http-equiv="x-ua-compatible" content="ie=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <meta name="description" content="" />
+   <meta name="author" content="Kuldeep Saini">
 
    <!-- Site Title -->
-   {% block title %} {% endblock title%}
+    <title>
+       {% block title %} {% endblock title%} | Kuldeepsaini.in
+    </title>
    <!-- Place favicon.ico in the root directory -->
    <link rel="apple-touch-icon" href="{% static 'assets/img/favicon.png' %}" />
    <link rel="shortcut icon" type="image/png" href="{% static 'assets/img/favicon.png' %}" />
@@ -34,7 +36,8 @@
 
    <!-- For Any Other Css Files If Need In Future For A Spacific Page  -->
    {% block head %}
-   
+   <meta name="description" content="Kuldeep Saini's professional portfolio. Explore my projects, skills, and experiences in web development, software engineering, and more. Connect with me for collaboration and opportunities.">
+
    {% endblock head%}
 </head>
 
