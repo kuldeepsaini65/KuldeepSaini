@@ -18,3 +18,9 @@ class ExperienceAdmin(admin.ModelAdmin):
     list_filter = ['type','end_year']
     
     
+    
+# Projects Admin Class
+@register(Projects)
+class ProjectsAdmin(admin.ModelAdmin):
+    list_display = ['name', 'link', 'image', 'upload_date']
+    list_display_links = ['name', 'link', 'image', 'upload_date']

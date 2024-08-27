@@ -35,3 +35,18 @@ class Experience(models.Model):
     organization = models.CharField(verbose_name="Organization",max_length=255, help_text="it can be Comany or School Name")  # Company or school
     def __str__(self):
         return f"{self.title} ({self.joining_date}-{self.end_year})"
+    
+
+class Projects(models.Model):
+    name = models.CharField(max_length=30, help_text="Enter Project Name.  max character Length is 30 ")
+    link = models.URLField(verbose_name="Project Live Link", help_text="example - https://www.kuldeepsaini.in")
+    image = models.ImageField(upload_to='projects')
+    upload_date = models.DateField(auto_now=True)
+    
+    class Meta:
+        verbose_name = "Projects"
+        verbose_name_plural = 'Projects'
+        db_table = 'Projects'
+    
+    def __str__(self):
+        return self.name
