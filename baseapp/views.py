@@ -81,3 +81,15 @@ def contact(request):
             return redirect('home')
 
     return render(request, 'contact.html')
+
+
+def privacy_policy(request):
+    return render(request,'basic_pages/privacy_policy.html')
+
+
+def termsconditions(request):
+    return render(request, 'basic_pages/terms_and_conditions.html')
+def refund(request):
+    return render(request, 'basic_pages/refund.html')
+def shipping(request):
+    return render(request, 'basic_pages/shipping.html')
