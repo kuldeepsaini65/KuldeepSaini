@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class ContactForm(models.Model):
@@ -39,14 +39,31 @@ class Experience(models.Model):
 
 class Projects(models.Model):
     name = models.CharField(max_length=30, help_text="Enter Project Name.  max character Length is 30 ")
-    link = models.URLField(verbose_name="Project Live Link", help_text="example - https://www.kuldeepsaini.in")
-    image = models.ImageField(upload_to='projects')
+    link = models.URLField(verbose_name="Project Live Link", help_text="example - https://www.kuldeepsaini.in", blank=True, null=True)
+    image = models.ImageField(upload_to='images/projects')
     upload_date = models.DateField(auto_now=True)
     
     class Meta:
         verbose_name = "Projects"
         verbose_name_plural = 'Projects'
         db_table = 'Projects'
+    
+    def __str__(self):
+        return self.name
+    
+class Skills(models.Model):
+    VISIBLE_CHOICES = (
+        ('hide', 'Hide'),
+        ('visible', 'Visible')
+    )
+    name = models.CharField(verbose_name="Skill Name", max_length=50)
+    knowledge = models.IntegerField(verbose_name="Skilles Covered ", validators=[MinValueValidator(10), MaxValueValidator(100)], default=50)
+    image = models.FileField(verbose_name="Icon File", upload_to='Images/icons/tech')
+    visiblity = models.CharField(verbose_name="Visiblity",choices=VISIBLE_CHOICES, max_length=10)
+    
+    class Meta:
+        verbose_name = "Skills"
+        db_table = "Skills"
     
     def __str__(self):
         return self.name

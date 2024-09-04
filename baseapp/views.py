@@ -8,9 +8,11 @@ from django.http import JsonResponse
 def home(request):
     work = Experience.objects.filter(type='work').order_by('joining_date')[::-1]
     education = Experience.objects.filter(type='education').order_by('joining_date')[::-1]
+    skills = Skills.objects.all().filter(visiblity="visible")
     context = {
         'workexp' : work,
-        'educationexp' : education  
+        'educationexp' : education ,
+        'skills' : skills,
     }
     
     if request.method == "POST":

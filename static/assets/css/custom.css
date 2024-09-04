@@ -1,3 +1,27 @@
 .tj-header-area .logo-box {
     max-width:80px;
 }
+
+/* .skills-widget .skill-item .icon-box {
+    max-width: 60px;
+    width: 100%;
+    margin:  auto ;
+} */
+
+/* @media only screen and (max-width: 767px) {
+    .skills-widget .skill-item .icon-box {
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .skills-widget .skill-inner {
+        padding: 50px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .skills-widget .skill-inner {
+        padding: 50px;
+    }
+} */

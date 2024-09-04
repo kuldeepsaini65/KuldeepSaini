@@ -24,3 +24,11 @@ class ExperienceAdmin(admin.ModelAdmin):
 class ProjectsAdmin(admin.ModelAdmin):
     list_display = ['name', 'link', 'image', 'upload_date']
     list_display_links = ['name', 'link', 'image', 'upload_date']
+
+@register(Skills)
+class SkillsAdmin(admin.ModelAdmin):
+    list_display = ['name', 'image','visiblity']
+    list_display_links = ['name', 'image','visiblity']
+    
+    list_filter = ['visiblity']
+    
